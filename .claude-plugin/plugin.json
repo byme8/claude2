@@ -1,0 +1,19 @@
+{
+  "name": "law",
+  "displayName": "Law",
+  "version": "0.1.0",
+  "description": "PreToolUse guards that enforce coding-agent laws: comment policy, workaround ledger, scoped search, safe deletions, edit-tools-only, no polling loops, short foreground commands",
+  "author": {
+    "name": "Stanislav Silin"
+  },
+  "license": "MIT",
+  "keywords": ["hooks", "guards", "comments", "safety"],
+  "userConfig": {
+    "disabled_laws": {
+      "type": "string",
+      "title": "Disabled laws",
+      "description": "Comma-separated guard names to switch off: bash, comment, workaround, edit-tools, polling-loop, short-foreground",
+      "default": ""
+    }
+  }
+}

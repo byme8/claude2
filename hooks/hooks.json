@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "timeout": 600,
+            "command": "dotnet",
+            "args": ["run", "${CLAUDE_PLUGIN_ROOT}/build.cs", "--", "${CLAUDE_PLUGIN_ROOT}", "${CLAUDE_PLUGIN_DATA}"]
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell|Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_DATA}/bin/law.exe",
+            "args": [],
+            "onFailure": "block"
+          }
+        ]
+      }
+    ]
+  }
+}

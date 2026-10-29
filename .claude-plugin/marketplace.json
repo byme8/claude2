@@ -1,0 +1,13 @@
+{
+  "name": "law",
+  "owner": {
+    "name": "Stanislav Silin"
+  },
+  "plugins": [
+    {
+      "name": "law",
+      "source": "./",
+      "description": "PreToolUse guards that enforce coding-agent laws"
+    }
+  ]
+}
