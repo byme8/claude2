@@ -1,5 +1,5 @@
 {
-  "name": "a",
+  "name": "law",
   "displayName": "Law",
   "version": "0.1.0",
   "description": "PreToolUse guards that enforce coding-agent laws: comment policy, workaround ledger, scoped search, safe deletions, edit-tools-only, no polling loops, short foreground commands",

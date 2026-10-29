@@ -5,7 +5,7 @@
   },
   "plugins": [
     {
-      "name": "a",
+      "name": "law",
       "source": "./",
       "description": "PreToolUse guards that enforce coding-agent laws"
     }
