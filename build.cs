@@ -76,6 +76,10 @@ bool Publish(string outDir, bool aot, StringBuilder sink)
     {
         psi.ArgumentList.Add(a);
     }
+    if (VsInstallerDir() is { } installer)
+    {
+        psi.Environment["PATH"] = installer + Path.PathSeparator + psi.Environment["PATH"];
+    }
 
     sink.AppendLine($"== dotnet publish (PublishAot={aot})");
     using var proc = Process.Start(psi)!;
@@ -113,6 +117,16 @@ void Install(string from)
         }
         File.Move(file, target);
     }
+}
+
+static string? VsInstallerDir()
+{
+    if (!OperatingSystem.IsWindows())
+    {
+        return null;
+    }
+    var dir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "Microsoft Visual Studio", "Installer");
+    return File.Exists(Path.Combine(dir, "vswhere.exe")) ? dir : null;
 }
 
 static void TryDelete(string path)

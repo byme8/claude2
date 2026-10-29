@@ -1,11 +1,11 @@
 {
-  "name": "law",
+  "name": "claude-law",
   "owner": {
     "name": "Stanislav Silin"
   },
   "plugins": [
     {
-      "name": "law",
+      "name": "a",
       "source": "./",
       "description": "PreToolUse guards that enforce coding-agent laws"
     }
