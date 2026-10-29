@@ -23,8 +23,8 @@ Each rule is described in [docs/claude-md-snippet.md](docs/claude-md-snippet.md)
 ## Install
 
 ```bash
-claude plugin marketplace add byme8/claude-law
-claude plugin install law@claude-law
+claude plugin marketplace add byme8/claude2
+claude plugin install law@byme8
 ```
 
 Then restart Claude Code. At session start `build.cs` hashes the guard sources and, when the installed guard is missing or stale, publishes it (Native AOT, falling back to JIT) into `<plugin data>/bin/law.exe` — that name on every OS. The first session waits about a minute; later sessions skip the build until the sources change.
