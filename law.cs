@@ -27,6 +27,11 @@ var toolName = payload?.ToolName ?? "";
 var input = payload?.ToolInput;
 var cwd = payload?.Cwd ?? "";
 
+if (payload?.HookEventName == "PostToolUse")
+{
+    return OnEdit.Run(toolName, input, cwd);
+}
+
 var applicable = Laws.For(toolName);
 if (applicable.Count == 0)
 {

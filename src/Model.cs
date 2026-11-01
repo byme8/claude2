@@ -23,6 +23,8 @@ internal sealed class ToolInput
 
 internal sealed class Payload
 {
+    [JsonPropertyName("hook_event_name")] public string? HookEventName { get; set; }
+
     [JsonPropertyName("tool_name")] public string? ToolName { get; set; }
 
     [JsonPropertyName("tool_input")] public ToolInput? ToolInput { get; set; }
